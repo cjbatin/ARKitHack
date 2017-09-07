@@ -47,7 +47,11 @@ class GeometryFactory {
         let assets = MDLAsset(url: url)
         
         let meerkat = SCNNode(mdlObject: assets.object(at: 0))
+<<<<<<< Updated upstream
         meerkat.scale = SCNVector3(0.002, 0.002, 0.002)
+=======
+        meerkat.scale = SCNVector3Make(0.002, 0.002, 0.002)
+>>>>>>> Stashed changes
         return meerkat
     }
 
