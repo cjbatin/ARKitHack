@@ -12,11 +12,13 @@ import ARKit
 
 class MoleGameViewController: UIViewController {
 
+    let maxMeerkats = 3
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
     var spawnTime:TimeInterval = 0
     
     private var planes: [UUID: FloorPlaneNode] = [:]
+    private var meerkats: [SCNNode] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +94,6 @@ class MoleGameViewController: UIViewController {
 
         // TODO: Chnage to a 3d mole
         let meerkat = GeometryFactory.meerkat()
-        let geometry = meerkat.geometry!
         
         // TODO: subtract width and height
         let w = Float((width)/2.0) //Float((width - geometry.width)/2.0)
@@ -109,10 +110,12 @@ class MoleGameViewController: UIViewController {
        // let geometryNode = SCNNode(geometry: geometry)
         meerkat.position = molePositionInWorld
         
+        meerkats.append(meerkat)
         self.scene.rootNode.addChildNode(meerkat)
     }
     
-    func cleanScene() {
+    func cleanOldMeerkats() {
+        
         for node in scene.rootNode.childNodes {
             if node.presentation.position.y < -5 {
                 node.removeFromParentNode()
@@ -170,10 +173,13 @@ extension MoleGameViewController : SCNSceneRendererDelegate {
         // 3
         if time > spawnTime {
             spawnMole()
-            
+            if meerkats.count > maxMeerkats {
+                let meerkatToRemove = meerkats.remove(at: 0)
+                meerkatToRemove.removeFromParentNode()
+            }
             // 2
             spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1))
         }
-        //cleanScene()
+     
     }
 }
