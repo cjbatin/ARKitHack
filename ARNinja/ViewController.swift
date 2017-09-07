@@ -12,7 +12,9 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sceneView: ARSCNView!
+    let scene = SCNScene()
+    var spawnTime:TimeInterval = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
         // Set the scene to the view
         sceneView.scene = scene
+        sceneView.delegate = self
+        sceneView.isPlaying = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,5 +81,66 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    func spawnShape() {
+        // 1
+        var geometry:SCNGeometry
+        // 2
+        switch ShapeType.random() {
+        default:
+            // 3
+            geometry = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
+        }
+        // 4
+        let randomRed = CGFloat(arc4random_uniform(255))
+        let randomBlue = CGFloat(arc4random_uniform(255))
+        let randomGreen = CGFloat(arc4random_uniform(255))
+        geometry.materials.first?.diffuse.contents = UIColor.init(red: (randomRed/255), green: (randomGreen/255), blue: (randomBlue/255), alpha: 1.0)
+        let geometryNode = SCNNode(geometry: geometry)
+        let randomX = randomFloat(min: -2, max: 2)
+        // 2
+        let force = SCNVector3(x: randomX, y: 1 , z: 0)
+        // 3
+        let position = SCNVector3(x: 0.05, y: 0.05, z: -4)
+        // 4
+        geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
+        // 5
+        geometryNode.position = position
+        geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        
+        scene.rootNode.addChildNode(geometryNode)
+        
+    }
+    @objc func tapped(recognizer: UIGestureRecognizer) {
+        spawnShape()
+    }
+    
+    func randomFloat(min: Float, max: Float) -> Float {
+        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    }
+    
+    func cleanScene() {
+        // 1
+        for node in scene.rootNode.childNodes {
+            // 2
+            if node.presentation.position.y < -2 {
+                // 3
+                node.removeFromParentNode()
+            }
+        }
+    }
+}
+
+extension ViewController : SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // 3
+        if time > spawnTime {
+            spawnShape()
+            
+            // 2
+            spawnTime = time + TimeInterval(Float.random(min: 5, max: 10))
+        }
+        cleanScene()
     }
 }
