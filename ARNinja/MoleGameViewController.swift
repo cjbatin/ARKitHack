@@ -35,7 +35,7 @@ class MoleGameViewController: UIViewController {
         sceneView.delegate = self
         sceneView.isPlaying = true
         
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped:))
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped))
         sceneView.addGestureRecognizer(tapGesture)
     }
     
@@ -113,6 +113,7 @@ class MoleGameViewController: UIViewController {
         print("molePositionOnFloor = \(molePositionOnFloor.y), molePositionInWorld=\(molePositionInWorld.y), floorPane.y= \(floorPlane.position.y)")
 
         let geometryNode = SCNNode(geometry: geometry)
+        geometryNode.name = "meerkat"
         geometryNode.position = molePositionInWorld
         
         self.scene.rootNode.addChildNode(geometryNode)
@@ -157,14 +158,16 @@ extension MoleGameViewController: ARSCNViewDelegate {
         
     }
     
-    func screenTapped(recognizer: UIGestureRecognizer) {
+    @objc func screenTapped(recognizer: UIGestureRecognizer) {
         let sceneView = recognizer.view as! SCNView
         let touchLocation = recognizer.location(in: sceneView)
         let hitResults = sceneView.hitTest(touchLocation, options: [:])
         
         if !hitResults.isEmpty{
             let node = hitResults[0].node
-            node.removeFromParentNode()
+            if node.name == "meerkat"{
+                node.removeFromParentNode()
+            }
         }
         
     }
