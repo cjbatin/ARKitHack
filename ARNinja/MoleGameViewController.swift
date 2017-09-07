@@ -88,18 +88,12 @@ class MoleGameViewController: UIViewController {
         let height = floorPlane.plane.height
 
         // TODO: Chnage to a 3d mole
-        let geometry = SCNPyramid(width: 0.1, height: 0.1, length: 0.1)
-        for _ in 0..<6 {
-            let material = SCNMaterial()
-            let randomRed = arc4random_uniform(255)
-            let randomGreen = arc4random_uniform(255)
-            let randomBlue = arc4random_uniform(255)
-            material.diffuse.contents = UIColor(red: CGFloat(randomRed) / 255.0, green: CGFloat(randomGreen) / 255.0, blue: CGFloat(randomBlue) / 255.0, alpha: 1.0)
-            geometry.materials.append(material)
-        }
+        let meerkat = GeometryFactory.meerkat()
+        let geometry = meerkat.geometry!
         
-        let w = Float((width - geometry.width)/2.0)
-        let h = Float((height - geometry.height)/2.0)
+        // TODO: subtract width and height
+        let w = Float((width)/2.0) //Float((width - geometry.width)/2.0)
+        let h = Float((height)/2.0) // Float((height - geometry.height)/2.0)
         let x = Float.random(min: -w, max: w)
         let z = Float.random(min: -h, max: h)
 
@@ -109,10 +103,10 @@ class MoleGameViewController: UIViewController {
         
         print("molePositionOnFloor = \(molePositionOnFloor.y), molePositionInWorld=\(molePositionInWorld.y), floorPane.y= \(floorPlane.position.y)")
 
-        let geometryNode = SCNNode(geometry: geometry)
-        geometryNode.position = molePositionInWorld
+       // let geometryNode = SCNNode(geometry: geometry)
+        meerkat.position = molePositionInWorld
         
-        self.scene.rootNode.addChildNode(geometryNode)
+        self.scene.rootNode.addChildNode(meerkat)
     }
     
     func cleanScene() {

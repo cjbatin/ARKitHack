@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B11F61AB1200F86C5B /* MoleGameViewController.swift */; };
 		326600B41F61AE5600F86C5B /* FloorPlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */; };
+		4A08B6671F61C17F00DB85ED /* Title.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A08B6661F61C17F00DB85ED /* Title.scn */; };
+		4A437F511F61AF8F009F3199 /* reactor.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F4F1F61AF8F009F3199 /* reactor.scnp */; };
+		4A437F521F61AF8F009F3199 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F501F61AF8F009F3199 /* spark.png */; };
+		4A92FF5C1F61C6BA0082244C /* Bokeh.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A92FF5A1F61C6B90082244C /* Bokeh.scnp */; };
+		4A92FF5D1F61C6BA0082244C /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A92FF5B1F61C6B90082244C /* bokeh.png */; };
+		4A92FF5F1F61C7B40082244C /* Meerkat.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A92FF5E1F61C7B40082244C /* Meerkat.scn */; };
+		4A92FF741F61CB030082244C /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 4A92FF731F61C9E90082244C /* Models */; };
+		4AA13CB21F619ED600A153C2 /* EffectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA13CB11F619ED600A153C2 /* EffectsManager.swift */; };
+		4AA13CB41F619F4D00A153C2 /* GeometryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */; };
+		4AA13CB71F61A03C00A153C2 /* shimmer.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4AA13CB51F61A03C00A153C2 /* shimmer.scnp */; };
+		4AA13CB81F61A03C00A153C2 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA13CB61F61A03C00A153C2 /* spark.png */; };
+		4AC5B9B01F61CCA90040C6C5 /* RootScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */; };
+		4ACA72051F61A31700A84FE9 /* rain.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA72041F61A31700A84FE9 /* rain.scnp */; };
 		51E95E901F6178EE0027FB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95E8F1F6178EE0027FB20 /* AppDelegate.swift */; };
 		51E95E941F6178EE0027FB20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95E931F6178EE0027FB20 /* ViewController.swift */; };
 		51E95E971F6178EE0027FB20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E95E951F6178EE0027FB20 /* Main.storyboard */; };
@@ -46,6 +59,19 @@
 /* Begin PBXFileReference section */
 		326600B11F61AB1200F86C5B /* MoleGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleGameViewController.swift; sourceTree = "<group>"; };
 		326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlaneNode.swift; sourceTree = "<group>"; };
+		4A08B6661F61C17F00DB85ED /* Title.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Title.scn; sourceTree = "<group>"; };
+		4A437F4F1F61AF8F009F3199 /* reactor.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = reactor.scnp; sourceTree = "<group>"; };
+		4A437F501F61AF8F009F3199 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		4A92FF5A1F61C6B90082244C /* Bokeh.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Bokeh.scnp; sourceTree = "<group>"; };
+		4A92FF5B1F61C6B90082244C /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		4A92FF5E1F61C7B40082244C /* Meerkat.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Meerkat.scn; sourceTree = "<group>"; };
+		4A92FF731F61C9E90082244C /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		4AA13CB11F619ED600A153C2 /* EffectsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsManager.swift; sourceTree = "<group>"; };
+		4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryFactory.swift; sourceTree = "<group>"; };
+		4AA13CB51F61A03C00A153C2 /* shimmer.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = shimmer.scnp; sourceTree = "<group>"; };
+		4AA13CB61F61A03C00A153C2 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = RootScene.scn; sourceTree = "<group>"; };
+		4ACA72041F61A31700A84FE9 /* rain.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = rain.scnp; sourceTree = "<group>"; };
 		51E95E8C1F6178EE0027FB20 /* ARNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E95E8F1F6178EE0027FB20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51E95E931F6178EE0027FB20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +120,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AC5B9B11F61CF0F0040C6C5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4A08B6661F61C17F00DB85ED /* Title.scn */,
+				4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */,
+				4A92FF5E1F61C7B40082244C /* Meerkat.scn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4ACA72061F61A31B00A84FE9 /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				4AA13CB51F61A03C00A153C2 /* shimmer.scnp */,
+				4ACA72041F61A31700A84FE9 /* rain.scnp */,
+				4A437F4F1F61AF8F009F3199 /* reactor.scnp */,
+				4A92FF5A1F61C6B90082244C /* Bokeh.scnp */,
+				4A92FF5B1F61C6B90082244C /* bokeh.png */,
+				4A437F501F61AF8F009F3199 /* spark.png */,
+			);
+			path = "Particle Effects";
+			sourceTree = "<group>";
+		};
 		51E95E831F6178EE0027FB20 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +171,12 @@
 				51E95E931F6178EE0027FB20 /* ViewController.swift */,
 				326600B11F61AB1200F86C5B /* MoleGameViewController.swift */,
 				51E95EBF1F617E890027FB20 /* ShapeType.swift */,
+				4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */,
+				4AA13CB11F619ED600A153C2 /* EffectsManager.swift */,
+				4AA13CB61F61A03C00A153C2 /* spark.png */,
+				4AC5B9B11F61CF0F0040C6C5 /* Scenes */,
+				4ACA72061F61A31B00A84FE9 /* Particle Effects */,
+				4A92FF731F61C9E90082244C /* Models */,
 				51E95E951F6178EE0027FB20 /* Main.storyboard */,
 				51E95E981F6178EE0027FB20 /* Assets.xcassets */,
 				51E95E9A1F6178EE0027FB20 /* LaunchScreen.storyboard */,
@@ -270,9 +325,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A08B6671F61C17F00DB85ED /* Title.scn in Resources */,
+				4AA13CB81F61A03C00A153C2 /* spark.png in Resources */,
 				51E95E9C1F6178EE0027FB20 /* LaunchScreen.storyboard in Resources */,
+				4A437F511F61AF8F009F3199 /* reactor.scnp in Resources */,
 				51E95E991F6178EE0027FB20 /* Assets.xcassets in Resources */,
+				4AA13CB71F61A03C00A153C2 /* shimmer.scnp in Resources */,
+				4A92FF5F1F61C7B40082244C /* Meerkat.scn in Resources */,
+				4A437F521F61AF8F009F3199 /* spark.png in Resources */,
 				51E95E971F6178EE0027FB20 /* Main.storyboard in Resources */,
+				4A92FF5C1F61C6BA0082244C /* Bokeh.scnp in Resources */,
+				4AC5B9B01F61CCA90040C6C5 /* RootScene.scn in Resources */,
+				4A92FF741F61CB030082244C /* Models in Resources */,
+				4ACA72051F61A31700A84FE9 /* rain.scnp in Resources */,
+				4A92FF5D1F61C6BA0082244C /* bokeh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,11 +364,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				51E95ED21F61878D0027FB20 /* Float+Extensions.swift in Sources */,
+				4AA13CB41F619F4D00A153C2 /* GeometryFactory.swift in Sources */,
 				51E95ED71F6187990027FB20 /* UIColor+Extensions.swift in Sources */,
 				51E95ED11F61878B0027FB20 /* Double+Extensions.swift in Sources */,
 				326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */,
 				51E95ED61F6187970027FB20 /* SCNAction+Extensions.swift in Sources */,
 				51E95ED41F6187920027FB20 /* Generics.swift in Sources */,
+				4AA13CB21F619ED600A153C2 /* EffectsManager.swift in Sources */,
 				51E95E941F6178EE0027FB20 /* ViewController.swift in Sources */,
 				51E95EC01F617E890027FB20 /* ShapeType.swift in Sources */,
 				51E95ED51F6187950027FB20 /* Int+Extensions.swift in Sources */,
@@ -395,6 +463,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -452,6 +521,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
