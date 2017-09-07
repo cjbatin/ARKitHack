@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B11F61AB1200F86C5B /* MoleGameViewController.swift */; };
 		326600B41F61AE5600F86C5B /* FloorPlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */; };
+		3294F0C31F61EC8700B48F67 /* squelch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F61F61E9FE00433A95 /* squelch.mp3 */; };
+		3294F0C41F61EC8900B48F67 /* twang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F71F61E9FE00433A95 /* twang.mp3 */; };
 		4A08B6671F61C17F00DB85ED /* Title.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A08B6661F61C17F00DB85ED /* Title.scn */; };
 		4A22CED21F61DFE5000A2855 /* Hammer.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A22CED11F61DFE5000A2855 /* Hammer.scn */; };
 		4A437F511F61AF8F009F3199 /* reactor.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F4F1F61AF8F009F3199 /* reactor.scnp */; };
@@ -641,7 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FRR8LLVHCT;
+				DEVELOPMENT_TEAM = 4P784L49TT;
 				INFOPLIST_FILE = ARNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja;
@@ -656,7 +658,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FRR8LLVHCT;
+				DEVELOPMENT_TEAM = 4P784L49TT;
 				INFOPLIST_FILE = ARNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja;
