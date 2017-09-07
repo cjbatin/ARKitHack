@@ -106,7 +106,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
         
         scene.rootNode.addChildNode(geometryNode)
-        
     }
     
     func randomNodeGeometry() -> SCNGeometry {
