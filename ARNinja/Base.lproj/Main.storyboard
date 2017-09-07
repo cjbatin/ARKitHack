@@ -53,7 +53,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.12941176470588234" green="0.57647058823529407" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.68627450980392157" green="0.70196078431372544" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="Mpo-7g-di0"/>
