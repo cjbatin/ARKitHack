@@ -96,26 +96,38 @@
         <scene sceneID="K3B-Bk-gQS">
             <objects>
                 <tableViewController id="hOT-vA-dBM" customClass="HighScoreTableViewController" customModule="ARNinja" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KIi-N4-36s">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KIi-N4-36s">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="48" id="a2g-f4-11H" customClass="HighScoreCell" customModule="ARNinja" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="667" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="83" id="a2g-f4-11H" customClass="HighScoreCell" customModule="ARNinja" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="667" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2g-f4-11H" id="e9u-G3-Qh5">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="47.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-GK-U6H">
-                                            <rect key="frame" x="8" y="13" width="651" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-Gc-tsq">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="83"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-GK-U6H">
+                                            <rect key="frame" x="8" y="8" width="651" height="67"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                            <color key="textColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I3F-Gc-tsq" firstAttribute="leading" secondItem="e9u-G3-Qh5" secondAttribute="leading" id="Jwd-ZT-cl8"/>
+                                        <constraint firstItem="4dM-GK-U6H" firstAttribute="top" secondItem="e9u-G3-Qh5" secondAttribute="top" constant="8" id="KEz-Nb-zNY"/>
+                                        <constraint firstAttribute="trailing" secondItem="I3F-Gc-tsq" secondAttribute="trailing" id="VBC-gx-tBT"/>
+                                        <constraint firstAttribute="bottom" secondItem="4dM-GK-U6H" secondAttribute="bottom" constant="7.5" id="cXY-Dc-UGw"/>
+                                        <constraint firstAttribute="bottom" secondItem="I3F-Gc-tsq" secondAttribute="bottom" id="ewA-jr-5aG"/>
+                                        <constraint firstItem="I3F-Gc-tsq" firstAttribute="top" secondItem="e9u-G3-Qh5" secondAttribute="top" id="gKl-sx-J1W"/>
+                                        <constraint firstAttribute="trailing" secondItem="4dM-GK-U6H" secondAttribute="trailing" constant="8" id="sDC-Ov-9v1"/>
+                                        <constraint firstItem="4dM-GK-U6H" firstAttribute="leading" secondItem="e9u-G3-Qh5" secondAttribute="leading" constant="8" id="u6G-EY-Y6x"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="highScoreLabel" destination="4dM-GK-U6H" id="TbX-AM-xVc"/>
