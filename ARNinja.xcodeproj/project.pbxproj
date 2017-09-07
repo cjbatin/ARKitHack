@@ -65,6 +65,8 @@
 /* Begin PBXFileReference section */
 		326600B11F61AB1200F86C5B /* MoleGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleGameViewController.swift; sourceTree = "<group>"; };
 		326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlaneNode.swift; sourceTree = "<group>"; };
+		431B46F61F61E9FE00433A95 /* squelch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squelch.mp3; sourceTree = "<group>"; };
+		431B46F71F61E9FE00433A95 /* twang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = twang.mp3; sourceTree = "<group>"; };
 		4A08B6661F61C17F00DB85ED /* Title.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Title.scn; sourceTree = "<group>"; };
 		4A22CED11F61DFE5000A2855 /* Hammer.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hammer.scn; sourceTree = "<group>"; };
 		4A437F4F1F61AF8F009F3199 /* reactor.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = reactor.scnp; sourceTree = "<group>"; };
@@ -132,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431B46F81F61EA0A00433A95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				431B46F61F61E9FE00433A95 /* squelch.mp3 */,
+				431B46F71F61E9FE00433A95 /* twang.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4AC5B9B11F61CF0F0040C6C5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +225,7 @@
 		51E95E8E1F6178EE0027FB20 /* ARNinja */ = {
 			isa = PBXGroup;
 			children = (
+				431B46F81F61EA0A00433A95 /* Resources */,
 				51DD53971F61BEAB00097700 /* Managers */,
 				51DD53911F61B04D00097700 /* Model */,
 				51DD53901F61B03A00097700 /* ViewControllers */,
