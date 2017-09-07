@@ -129,14 +129,11 @@ extension ViewController : SCNSceneRendererDelegate {
             
             scene.rootNode.addChildNode(meerkat)
             isInitialFrame = false
+            
+//            self.effectManager.perform(animation: [], onNode: meerkat) {
+//                meerkat.removeFromParentNode()
+//            }
         }
-    
-//        if time > spawnTime {
-//            spawnShape()
-//            spawnTime = time + TimeInterval(Float.random(min: 10000, max: 1000000))
-//        }
-//
-//        cleanScene()
     }
     
 }

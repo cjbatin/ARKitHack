@@ -117,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AC5B9B11F61CF0F0040C6C5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4A08B6661F61C17F00DB85ED /* Title.scn */,
+				4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */,
+				4A92FF5E1F61C7B40082244C /* Meerkat.scn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		4ACA72061F61A31B00A84FE9 /* Particle Effects */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,13 +170,11 @@
 				4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */,
 				4AA13CB11F619ED600A153C2 /* EffectsManager.swift */,
 				4AA13CB61F61A03C00A153C2 /* spark.png */,
+				4AC5B9B11F61CF0F0040C6C5 /* Scenes */,
 				4ACA72061F61A31B00A84FE9 /* Particle Effects */,
+				4A92FF731F61C9E90082244C /* Models */,
 				51E95E951F6178EE0027FB20 /* Main.storyboard */,
 				51E95E981F6178EE0027FB20 /* Assets.xcassets */,
-				4A92FF731F61C9E90082244C /* Models */,
-				4A08B6661F61C17F00DB85ED /* Title.scn */,
-				4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */,
-				4A92FF5E1F61C7B40082244C /* Meerkat.scn */,
 				51E95E9A1F6178EE0027FB20 /* LaunchScreen.storyboard */,
 				51E95E9D1F6178EE0027FB20 /* Info.plist */,
 				4AD9D93C1F61B476007E517D /* Models */,
