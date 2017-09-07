@@ -53,16 +53,19 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.68627450980392157" green="0.70196078431372544" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.73333333333333328" green="0.0039215686274509803" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="Mpo-7g-di0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SO8-yV-v69">
-                                <rect key="frame" x="20" y="325" width="113" height="30"/>
+                                <rect key="frame" x="20" y="292" width="215" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="High Scores"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
+                                <state key="normal" title="High Scores">
+                                    <color key="titleColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="hOT-vA-dBM" kind="show" id="C0G-AA-yUy"/>
                                 </connections>
