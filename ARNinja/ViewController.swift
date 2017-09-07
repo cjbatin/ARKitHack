@@ -27,8 +27,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
         // Set the scene to the view
         sceneView.scene = scene
         sceneView.delegate = self
@@ -85,13 +83,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func spawnShape() {
         // 1
-        var geometry:SCNGeometry
+        let geometry = randomNodeGeometry()
         // 2
-        switch ShapeType.random() {
-        default:
-            // 3
-            geometry = SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
-        }
+
         // 4
         let randomRed = CGFloat(arc4random_uniform(255))
         let randomBlue = CGFloat(arc4random_uniform(255))
@@ -112,8 +106,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         scene.rootNode.addChildNode(geometryNode)
         
     }
-    @objc func tapped(recognizer: UIGestureRecognizer) {
-        spawnShape()
+    
+    func randomNodeGeometry() -> SCNGeometry {
+        switch ShapeType.random() {
+        case .Box:
+            return SCNBox(width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0.0)
+        case .Capsule:
+            return SCNCapsule(capRadius: 1.0, height: 1.0)
+        case .Cone:
+            return SCNCone(topRadius: 1.0, bottomRadius: 1.0, height: 1.0)
+        case .Cylinder:
+            return SCNCylinder(radius: 1.0, height: 1.0)
+        case .Pyramid:
+            return SCNPyramid(width: 1.0, height: 1.0, length: 1.0)
+        case .Sphere:
+            return SCNSphere(radius: 1.0)
+        case .Torus:
+            return SCNTorus(ringRadius: 1.0, pipeRadius: 0.5)
+        case .Tube:
+            return SCNTube(innerRadius: 1.0, outerRadius: 1.0, height: 1.0)
+        }
     }
     
     func randomFloat(min: Float, max: Float) -> Float {
