@@ -10,6 +10,7 @@
 		326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B11F61AB1200F86C5B /* MoleGameViewController.swift */; };
 		326600B41F61AE5600F86C5B /* FloorPlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */; };
 		4A08B6671F61C17F00DB85ED /* Title.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A08B6661F61C17F00DB85ED /* Title.scn */; };
+		4A22CED21F61DFE5000A2855 /* Hammer.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A22CED11F61DFE5000A2855 /* Hammer.scn */; };
 		4A437F511F61AF8F009F3199 /* reactor.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F4F1F61AF8F009F3199 /* reactor.scnp */; };
 		4A437F521F61AF8F009F3199 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F501F61AF8F009F3199 /* spark.png */; };
 		4A92FF5C1F61C6BA0082244C /* Bokeh.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A92FF5A1F61C6B90082244C /* Bokeh.scnp */; };
@@ -71,6 +72,7 @@
 		431B46F61F61E9FE00433A95 /* squelch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squelch.mp3; sourceTree = "<group>"; };
 		431B46F71F61E9FE00433A95 /* twang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = twang.mp3; sourceTree = "<group>"; };
 		4A08B6661F61C17F00DB85ED /* Title.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Title.scn; sourceTree = "<group>"; };
+		4A22CED11F61DFE5000A2855 /* Hammer.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hammer.scn; sourceTree = "<group>"; };
 		4A437F4F1F61AF8F009F3199 /* reactor.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = reactor.scnp; sourceTree = "<group>"; };
 		4A437F501F61AF8F009F3199 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		4A92FF5A1F61C6B90082244C /* Bokeh.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Bokeh.scnp; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		4AA13CB11F619ED600A153C2 /* EffectsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsManager.swift; sourceTree = "<group>"; };
 		4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryFactory.swift; sourceTree = "<group>"; };
 		4AA13CB51F61A03C00A153C2 /* shimmer.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = shimmer.scnp; sourceTree = "<group>"; };
-		4AA13CB61F61A03C00A153C2 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		4AA13CB61F61A03C00A153C2 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = RootScene.scn; sourceTree = "<group>"; };
 		4ACA72041F61A31700A84FE9 /* rain.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = rain.scnp; sourceTree = "<group>"; };
 		512C98951F61D55F005E6B31 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				4A08B6661F61C17F00DB85ED /* Title.scn */,
 				4AC5B9AF1F61CCA90040C6C5 /* RootScene.scn */,
 				4A92FF5E1F61C7B40082244C /* Meerkat.scn */,
+				4A22CED11F61DFE5000A2855 /* Hammer.scn */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 		4ACA72061F61A31B00A84FE9 /* Particle Effects */ = {
 			isa = PBXGroup;
 			children = (
+				4AA13CB61F61A03C00A153C2 /* spark.png */,
 				4AA13CB51F61A03C00A153C2 /* shimmer.scnp */,
 				4ACA72041F61A31700A84FE9 /* rain.scnp */,
 				4A437F4F1F61AF8F009F3199 /* reactor.scnp */,
@@ -241,7 +245,6 @@
 				51E95EBF1F617E890027FB20 /* ShapeType.swift */,
 				4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */,
 				4AA13CB11F619ED600A153C2 /* EffectsManager.swift */,
-				4AA13CB61F61A03C00A153C2 /* spark.png */,
 				4AC5B9B11F61CF0F0040C6C5 /* Scenes */,
 				4ACA72061F61A31B00A84FE9 /* Particle Effects */,
 				4A92FF731F61C9E90082244C /* Models */,
@@ -415,6 +418,7 @@
 				51E95E971F6178EE0027FB20 /* Main.storyboard in Resources */,
 				4A92FF5C1F61C6BA0082244C /* Bokeh.scnp in Resources */,
 				4AC5B9B01F61CCA90040C6C5 /* RootScene.scn in Resources */,
+				4A22CED21F61DFE5000A2855 /* Hammer.scn in Resources */,
 				4A92FF741F61CB030082244C /* Models in Resources */,
 				4ACA72051F61A31700A84FE9 /* rain.scnp in Resources */,
 				4A92FF5D1F61C6BA0082244C /* bokeh.png in Resources */,

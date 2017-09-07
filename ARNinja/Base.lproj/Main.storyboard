@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="-1430" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Screen View Controller-->
         <scene sceneID="DOP-ms-uyt">
             <objects>
-                <viewController id="Of8-B4-U2h" sceneMemberID="viewController">
+                <viewController id="Of8-B4-U2h" customClass="HomeScreenViewController" customModule="ARNinja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ror-iU-9Rr">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,9 +46,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="WBB-kM-pTU">
-                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="WBB-kM-pTU">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-8w-qyE">
                                 <rect key="frame" x="481" y="292" width="158" height="63"/>
@@ -75,6 +74,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WBB-kM-pTU" firstAttribute="top" secondItem="Ror-iU-9Rr" secondAttribute="top" id="A16-TH-0MI"/>
+                            <constraint firstItem="WBB-kM-pTU" firstAttribute="trailing" secondItem="WXQ-Rr-N0D" secondAttribute="trailing" id="kFY-MO-CM9"/>
+                            <constraint firstItem="WBB-kM-pTU" firstAttribute="bottom" secondItem="WXQ-Rr-N0D" secondAttribute="bottom" id="lN3-4K-TLQ"/>
+                            <constraint firstItem="WBB-kM-pTU" firstAttribute="leading" secondItem="WXQ-Rr-N0D" secondAttribute="leading" id="x8S-bL-CUv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WXQ-Rr-N0D"/>
                     </view>
                     <navigationItem key="navigationItem" id="pAY-Kv-LLS"/>
