@@ -34,6 +34,9 @@ class MoleGameViewController: UIViewController {
         sceneView.scene = scene
         sceneView.delegate = self
         sceneView.isPlaying = true
+        
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped:))
+        sceneView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,6 +147,18 @@ extension MoleGameViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         if let plane = self.planes.removeValue(forKey: anchor.identifier) {
             plane.removeFromParentNode()
+        }
+        
+    }
+    
+    func screenTapped(recognizer: UIGestureRecognizer) {
+        let sceneView = recognizer.view as! SCNView
+        let touchLocation = recognizer.location(in: sceneView)
+        let hitResults = sceneView.hitTest(touchLocation, options: [:])
+        
+        if !hitResults.isEmpty{
+            let node = hitResults[0].node
+            node.removeFromParentNode()
         }
         
     }
