@@ -205,7 +205,6 @@
         <image name="BackgroundImage" width="1440" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V5O-gA-Mo2"/>
-        <segue reference="QBx-Bu-0cf"/>
+        <segue reference="Mpo-7g-di0"/>
     </inferredMetricsTieBreakers>
 </document>
