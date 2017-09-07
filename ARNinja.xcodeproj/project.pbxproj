@@ -45,6 +45,7 @@
 		8C3E13091F61E854002D6DF7 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13051F61E854002D6DF7 /* GameController.swift */; };
 		8C3E130A1F61E854002D6DF7 /* SpawnCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13061F61E854002D6DF7 /* SpawnCalculator.swift */; };
 		8C3E130B1F61E854002D6DF7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13071F61E854002D6DF7 /* Target.swift */; };
+		51FC87E41F61E82F00B648F0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		326600B11F61AB1200F86C5B /* MoleGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleGameViewController.swift; sourceTree = "<group>"; };
 		326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlaneNode.swift; sourceTree = "<group>"; };
+		431B46F61F61E9FE00433A95 /* squelch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squelch.mp3; sourceTree = "<group>"; };
+		431B46F71F61E9FE00433A95 /* twang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = twang.mp3; sourceTree = "<group>"; };
 		4A08B6661F61C17F00DB85ED /* Title.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Title.scn; sourceTree = "<group>"; };
 		4A437F4F1F61AF8F009F3199 /* reactor.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = reactor.scnp; sourceTree = "<group>"; };
 		4A437F501F61AF8F009F3199 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		8C3E13051F61E854002D6DF7 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8C3E13061F61E854002D6DF7 /* SpawnCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnCalculator.swift; sourceTree = "<group>"; };
 		8C3E13071F61E854002D6DF7 /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431B46F81F61EA0A00433A95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				431B46F61F61E9FE00433A95 /* squelch.mp3 */,
+				431B46F71F61E9FE00433A95 /* twang.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4AC5B9B11F61CF0F0040C6C5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,7 @@
 			children = (
 				51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */,
 				512C98951F61D55F005E6B31 /* GameOverViewController.swift */,
+				51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -216,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				8C3E13031F61E854002D6DF7 /* Logic */,
+				431B46F81F61EA0A00433A95 /* Resources */,
 				51DD53971F61BEAB00097700 /* Managers */,
 				51DD53911F61B04D00097700 /* Model */,
 				51DD53901F61B03A00097700 /* ViewControllers */,
@@ -436,6 +451,7 @@
 				51DD53931F61B05F00097700 /* HighScoresTableViewController.swift in Sources */,
 				51E95ED11F61878B0027FB20 /* Double+Extensions.swift in Sources */,
 				326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */,
+				51FC87E41F61E82F00B648F0 /* HomeScreenViewController.swift in Sources */,
 				51E95ED61F6187970027FB20 /* SCNAction+Extensions.swift in Sources */,
 				51E95ED41F6187920027FB20 /* Generics.swift in Sources */,
 				4AA13CB21F619ED600A153C2 /* EffectsManager.swift in Sources */,
