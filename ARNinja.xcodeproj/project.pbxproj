@@ -42,11 +42,13 @@
 		51E95ED61F6187970027FB20 /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95ECF1F6187850027FB20 /* SCNAction+Extensions.swift */; };
 		51E95ED71F6187990027FB20 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95ED01F6187850027FB20 /* UIColor+Extensions.swift */; };
 		51E95ED91F61A1B10027FB20 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95ED81F61A1B10027FB20 /* Model.swift */; };
+		51FC87E41F61E82F00B648F0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */; };
 		8C3E13081F61E854002D6DF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13041F61E854002D6DF7 /* Game.swift */; };
 		8C3E13091F61E854002D6DF7 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13051F61E854002D6DF7 /* GameController.swift */; };
 		8C3E130A1F61E854002D6DF7 /* SpawnCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13061F61E854002D6DF7 /* SpawnCalculator.swift */; };
 		8C3E130B1F61E854002D6DF7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E13071F61E854002D6DF7 /* Target.swift */; };
-		51FC87E41F61E82F00B648F0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */; };
+		8C3E130C1F61EC76002D6DF7 /* squelch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F61F61E9FE00433A95 /* squelch.mp3 */; };
+		8C3E130D1F61EC79002D6DF7 /* twang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F71F61E9FE00433A95 /* twang.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,11 +112,11 @@
 		51E95ECF1F6187850027FB20 /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
 		51E95ED01F6187850027FB20 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		51E95ED81F61A1B10027FB20 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		8C3E13041F61E854002D6DF7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8C3E13051F61E854002D6DF7 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8C3E13061F61E854002D6DF7 /* SpawnCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnCalculator.swift; sourceTree = "<group>"; };
 		8C3E13071F61E854002D6DF7 /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		51FC87E31F61E82F00B648F0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3E130D1F61EC79002D6DF7 /* twang.mp3 in Resources */,
 				4A08B6671F61C17F00DB85ED /* Title.scn in Resources */,
 				4AA13CB81F61A03C00A153C2 /* spark.png in Resources */,
 				51E95E9C1F6178EE0027FB20 /* LaunchScreen.storyboard in Resources */,
@@ -421,6 +424,7 @@
 				4A22CED21F61DFE5000A2855 /* Hammer.scn in Resources */,
 				4A92FF741F61CB030082244C /* Models in Resources */,
 				4ACA72051F61A31700A84FE9 /* rain.scnp in Resources */,
+				8C3E130C1F61EC76002D6DF7 /* squelch.mp3 in Resources */,
 				4A92FF5D1F61C6BA0082244C /* bokeh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
