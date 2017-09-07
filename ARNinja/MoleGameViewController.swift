@@ -113,6 +113,7 @@ class MoleGameViewController: UIViewController {
         
         meerkats.append(meerkat)
         self.scene.rootNode.addChildNode(meerkat)
+        playSound(state: .spawn)
     }
     
     func cleanOldMeerkats() {
@@ -164,9 +165,33 @@ extension MoleGameViewController: ARSCNViewDelegate {
             let node = hitResults[0].node
             if node.name == "meerkat"{
                 node.removeFromParentNode()
+                playSound(state: .whacked)
             }
         }
         
+    }
+    
+    func playSound(state: MoleStatus) {
+        
+        let resource: String
+        
+        switch state {
+        case .spawn:
+            resource = "twang"
+        case .whacked:
+            resource = "squelch"
+        }
+        
+        let url = Bundle.main.url(forResource: resource, withExtension: "mp3")!
+        
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            //guard let player = player else { return }
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
     
 }
@@ -185,4 +210,9 @@ extension MoleGameViewController : SCNSceneRendererDelegate {
         }
      
     }
+}
+
+enum MoleStatus{
+    case spawn
+    case whacked
 }
