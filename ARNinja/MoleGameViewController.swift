@@ -12,20 +12,28 @@ import ARKit
 
 class MoleGameViewController: UIViewController {
 
+    var gameController: GameController!
+
     let maxMeerkats = 3
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
+
     var spawnTime: TimeInterval = 0
     var spriteScene: SKScene!
     var scoreLabel: SKLabelNode!
     var timeLabel: SKLabelNode!
-
     
     private var planes: [UUID: FloorPlaneNode] = [:]
     private var meerkats: [SCNNode] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let game = Game()
+        gameController = GameController(
+            game: game,
+            delegate: self
+        )
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -199,8 +207,8 @@ extension MoleGameViewController: ARSCNViewDelegate {
             let node = hitResults[0].node
             if node.name == "meerkat"{
                 node.removeFromParentNode()
-                playSound(state: .whacked)
-            }
+                gameController.tapped()
+                playSound(state: .whacked)            }
         }
         
     }
@@ -232,18 +240,34 @@ extension MoleGameViewController: ARSCNViewDelegate {
 extension MoleGameViewController : SCNSceneRendererDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        // 3
-        if time > spawnTime {
-            spawnMole()
-            if meerkats.count >= maxMeerkats {
-                let meerkatToRemove = meerkats.remove(at: 0)
-                meerkatToRemove.removeFromParentNode()
-            }
-            // 2
-            spawnTime = time + TimeInterval(Float.random(min: 1, max: 2))
+
+        gameController.update()
+
+        if meerkats.count >= maxMeerkats {
+            let meerkatToRemove = meerkats.remove(at: 0)
+            meerkatToRemove.removeFromParentNode()
         }
      
     }
+}
+
+
+extension MoleGameViewController: GameControllerDelegate {
+
+    func spawn(target:Target) {
+        spawnMole()
+    }
+
+    func gameDidFinish(withScore:Int) {
+        sceneView.session.pause()
+        sceneView.isPlaying = false
+        HighscoresManager().updateScores(newScore: withScore)
+        lastScore = withScore
+        self.performSegue(withIdentifier: "toGameOver", sender: self)
+    }
+
+    func timeRemainingUpdated(to:TimeInterval) {}
+    func scoreUpdated(to:Int) {}
 }
 
 enum MoleStatus{
