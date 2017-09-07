@@ -10,4 +10,5 @@ import Foundation
 import UIKit
 
 
-var highScores : [Int]
+var highScores : [Int] = []
+var lastScore : Int?

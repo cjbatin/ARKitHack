@@ -17,7 +17,7 @@ class HighScoreTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return highScores.count
+        return highScores.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

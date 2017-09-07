@@ -49,5 +49,6 @@ class HighscoresManager : HighscoresProtocol {
     func saveArray(highScores: [Int]) {
         let userDefaults = UserDefaults.standard
         userDefaults.set(highScores, forKey: "highScores")
+        userDefaults.synchronize()
     }
 }

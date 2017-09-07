@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class GameViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
@@ -28,9 +28,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a new scene
         
         // Set the scene to the view
-        sceneView.scene = scene
-        sceneView.delegate = self
         sceneView.isPlaying = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
+        sceneView.scene = scene
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -139,9 +141,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             }
         }
     }
+    
+    @objc func tapped(recognizer: UIGestureRecognizer) {
+        gameDidFinish(withScore: 5)
+    }
+    func gameDidFinish(withScore:Int) {
+        sceneView.session.pause()
+        sceneView.isPlaying = false
+        HighscoresManager().updateScores(newScore: withScore)
+        lastScore = withScore
+        self.performSegue(withIdentifier: "toGameOver", sender: self)
+    }
+
 }
 
-extension ViewController : SCNSceneRendererDelegate {
+extension GameViewController : SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // 3
         if time > spawnTime {

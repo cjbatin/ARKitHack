@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512C98961F61D55F005E6B31 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512C98951F61D55F005E6B31 /* GameOverViewController.swift */; };
 		51DD53931F61B05F00097700 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */; };
 		51DD53951F61B09300097700 /* HighscoresProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53941F61B09300097700 /* HighscoresProtocol.swift */; };
 		51DD53991F61BECF00097700 /* HighscoresManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53981F61BECF00097700 /* HighscoresManager.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		512C98951F61D55F005E6B31 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		51DD53941F61B09300097700 /* HighscoresProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresProtocol.swift; sourceTree = "<group>"; };
 		51DD53981F61BECF00097700 /* HighscoresManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresManager.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				51E95E931F6178EE0027FB20 /* GameViewController.swift */,
 				51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */,
+				512C98951F61D55F005E6B31 /* GameOverViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				51E95ED91F61A1B10027FB20 /* Model.swift in Sources */,
 				51E95E901F6178EE0027FB20 /* AppDelegate.swift in Sources */,
 				51E95ED31F6187900027FB20 /* GameHelper.swift in Sources */,
+				512C98961F61D55F005E6B31 /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
