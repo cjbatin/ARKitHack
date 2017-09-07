@@ -151,6 +151,6 @@ extension ViewController : SCNSceneRendererDelegate {
             // 2
             spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1))
         }
-        cleanScene()
+//        cleanScene()
     }
 }
