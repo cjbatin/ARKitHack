@@ -92,11 +92,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let randomGreen = CGFloat(arc4random_uniform(255))
         geometry.materials.first?.diffuse.contents = UIColor.init(red: (randomRed/255), green: (randomGreen/255), blue: (randomBlue/255), alpha: 1.0)
         let geometryNode = SCNNode(geometry: geometry)
-        let randomX = randomFloat(min: -2, max: 2)
+        let randomX = Float.random(min: -5, max: 5)
+        let randomY = Float.random(min: -5, max: 5)
+        let randomZ = Float.random(min: -5, max: 5)
         // 2
-        let force = SCNVector3(x: randomX, y: 1 , z: 0)
+        let force = SCNVector3(x: 0, y: 1 , z: 0)
         // 3
-        let position = SCNVector3(x: 0.05, y: 0.05, z: -4)
+        let position = SCNVector3(x: randomX, y: randomY, z: randomZ)
         // 4
         geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
         // 5
@@ -128,15 +130,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    func randomFloat(min: Float, max: Float) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
-    }
-    
     func cleanScene() {
         // 1
         for node in scene.rootNode.childNodes {
             // 2
-            if node.presentation.position.y < -2 {
+            if node.presentation.position.y < -5 {
                 // 3
                 node.removeFromParentNode()
             }
@@ -151,7 +149,7 @@ extension ViewController : SCNSceneRendererDelegate {
             spawnShape()
             
             // 2
-            spawnTime = time + TimeInterval(Float.random(min: 5, max: 10))
+            spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1))
         }
         cleanScene()
     }
