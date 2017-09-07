@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51DD538F1F61AE2400097700 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD538E1F61AE2400097700 /* GameDelegate.swift */; };
 		51DD53931F61B05F00097700 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */; };
-		51DD53951F61B09300097700 /* HighscoresManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53941F61B09300097700 /* HighscoresManager.swift */; };
+		51DD53951F61B09300097700 /* HighscoresProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53941F61B09300097700 /* HighscoresProtocol.swift */; };
+		51DD53991F61BECF00097700 /* HighscoresManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD53981F61BECF00097700 /* HighscoresManager.swift */; };
 		51E95E901F6178EE0027FB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95E8F1F6178EE0027FB20 /* AppDelegate.swift */; };
 		51E95E941F6178EE0027FB20 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E95E931F6178EE0027FB20 /* GameViewController.swift */; };
 		51E95E971F6178EE0027FB20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E95E951F6178EE0027FB20 /* Main.storyboard */; };
@@ -46,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51DD538E1F61AE2400097700 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		51DD53921F61B05F00097700 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
-		51DD53941F61B09300097700 /* HighscoresManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresManager.swift; sourceTree = "<group>"; };
+		51DD53941F61B09300097700 /* HighscoresProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresProtocol.swift; sourceTree = "<group>"; };
+		51DD53981F61BECF00097700 /* HighscoresManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresManager.swift; sourceTree = "<group>"; };
 		51E95E8C1F6178EE0027FB20 /* ARNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E95E8F1F6178EE0027FB20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51E95E931F6178EE0027FB20 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +101,7 @@
 		51DD538D1F61AE0300097700 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				51DD538E1F61AE2400097700 /* GameDelegate.swift */,
-				51DD53941F61B09300097700 /* HighscoresManager.swift */,
+				51DD53941F61B09300097700 /* HighscoresProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -122,6 +121,21 @@
 				51E95ED81F61A1B10027FB20 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		51DD53961F61BE4000097700 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		51DD53971F61BEAB00097700 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				51DD53981F61BECF00097700 /* HighscoresManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		51E95E831F6178EE0027FB20 = {
@@ -147,6 +161,8 @@
 		51E95E8E1F6178EE0027FB20 /* ARNinja */ = {
 			isa = PBXGroup;
 			children = (
+				51DD53971F61BEAB00097700 /* Managers */,
+				51DD53961F61BE4000097700 /* Views */,
 				51DD53911F61B04D00097700 /* Model */,
 				51DD53901F61B03A00097700 /* ViewControllers */,
 				51DD538D1F61AE0300097700 /* Protocols */,
@@ -327,13 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51DD53951F61B09300097700 /* HighscoresManager.swift in Sources */,
+				51DD53951F61B09300097700 /* HighscoresProtocol.swift in Sources */,
 				51E95ED21F61878D0027FB20 /* Float+Extensions.swift in Sources */,
 				51E95ED71F6187990027FB20 /* UIColor+Extensions.swift in Sources */,
+				51DD53991F61BECF00097700 /* HighscoresManager.swift in Sources */,
 				51DD53931F61B05F00097700 /* HighScoresTableViewController.swift in Sources */,
 				51E95ED11F61878B0027FB20 /* Double+Extensions.swift in Sources */,
 				51E95ED61F6187970027FB20 /* SCNAction+Extensions.swift in Sources */,
-				51DD538F1F61AE2400097700 /* GameDelegate.swift in Sources */,
 				51E95ED41F6187920027FB20 /* Generics.swift in Sources */,
 				51E95E941F6178EE0027FB20 /* GameViewController.swift in Sources */,
 				51E95EC01F617E890027FB20 /* ShapeType.swift in Sources */,

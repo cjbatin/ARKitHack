@@ -9,9 +9,5 @@
 import Foundation
 import UIKit
 
-var inPlayObjects: [Item]?
-var currentHighScore : Int?
 
-struct Item {
-    
-}
+var highScores : [Int]
