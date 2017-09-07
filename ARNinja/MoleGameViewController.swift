@@ -16,6 +16,10 @@ class MoleGameViewController: UIViewController {
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
     var spawnTime: TimeInterval = 0
+    var spriteScene: SKScene!
+    var scoreLabel: SKLabelNode!
+    var timeLabel: SKLabelNode!
+
     
     private var planes: [UUID: FloorPlaneNode] = [:]
     private var meerkats: [SCNNode] = []
@@ -39,6 +43,36 @@ class MoleGameViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped))
         sceneView.addGestureRecognizer(tapGesture)
+
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = "Score: 0"
+        scoreLabel.horizontalAlignmentMode = .left
+
+        timeLabel = SKLabelNode(fontNamed: "Chalkduster")
+        timeLabel.text = "Time: 60"
+        timeLabel.horizontalAlignmentMode = .right
+
+        updateSprites()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateSprites(size: size)
+    }
+
+    func updateSprites(size: CGSize? = nil) {
+        sceneView.overlaySKScene = nil
+
+        spriteScene = SKScene(size: size ?? self.view.bounds.size)
+
+        scoreLabel.removeFromParent()
+        scoreLabel.position = CGPoint(x: 400, y: 300)
+        spriteScene.addChild(scoreLabel)
+
+        timeLabel.removeFromParent()
+        timeLabel.position = CGPoint(x: 200, y: 300)
+        spriteScene.addChild(timeLabel)
+
+        sceneView.overlaySKScene = spriteScene
     }
     
     override func viewWillAppear(_ animated: Bool) {
