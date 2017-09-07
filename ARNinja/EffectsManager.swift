@@ -10,10 +10,6 @@ import Foundation
 import SceneKit
 
 
-enum Animation {
-//    fadeOut()
-}
-
 enum Effect: String {
     case shimmer
     case rain
@@ -31,22 +27,6 @@ typealias EffectToken = String
 class EffectManager {
     var effectsForTokens: [EffectToken: SCNParticleSystem] = [:]
     
-    
-    func perform(animation: [Animation], onNode node: SCNNode, completionBlock: (() -> Void)?) {
-        CATransaction.begin()
-        
-        let animation = CABasicAnimation()
-        animation.fromValue = 1.0
-        animation.toValue = 0.5
-        animation.duration = 10.0
-        animation.autoreverses = true
-        animation.repeatCount = 10
-        node.addAnimation(animation, forKey: "opacity")
-
-//        CATransaction.setCompletionBlock(completionBlock)
-        
-        CATransaction.commit()
-    }
     
     @discardableResult func add(effect: Effect, toNode node: SCNNode) -> EffectToken {
         let particleSystem = SCNParticleSystem(named: effect.particleFileName, inDirectory: nil)!

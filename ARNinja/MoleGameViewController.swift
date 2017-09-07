@@ -16,6 +16,10 @@ class MoleGameViewController: UIViewController {
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
     var spawnTime: TimeInterval = 0
+    var spriteScene: SKScene!
+    var scoreLabel: SKLabelNode!
+    var timeLabel: SKLabelNode!
+
     
     private var planes: [UUID: FloorPlaneNode] = [:]
     private var meerkats: [SCNNode] = []
@@ -39,6 +43,36 @@ class MoleGameViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped))
         sceneView.addGestureRecognizer(tapGesture)
+
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = "Score: 0"
+        scoreLabel.horizontalAlignmentMode = .left
+
+        timeLabel = SKLabelNode(fontNamed: "Chalkduster")
+        timeLabel.text = "Time: 60"
+        timeLabel.horizontalAlignmentMode = .right
+
+        updateSprites()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateSprites(size: size)
+    }
+
+    func updateSprites(size: CGSize? = nil) {
+        sceneView.overlaySKScene = nil
+
+        spriteScene = SKScene(size: size ?? self.view.bounds.size)
+
+        scoreLabel.removeFromParent()
+        scoreLabel.position = CGPoint(x: 400, y: 300)
+        spriteScene.addChild(scoreLabel)
+
+        timeLabel.removeFromParent()
+        timeLabel.position = CGPoint(x: 200, y: 300)
+        spriteScene.addChild(timeLabel)
+
+        sceneView.overlaySKScene = spriteScene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +147,7 @@ class MoleGameViewController: UIViewController {
         
         meerkats.append(meerkat)
         self.scene.rootNode.addChildNode(meerkat)
+        playSound(state: .spawn)
     }
     
     func cleanOldMeerkats() {
@@ -164,9 +199,33 @@ extension MoleGameViewController: ARSCNViewDelegate {
             let node = hitResults[0].node
             if node.name == "meerkat"{
                 node.removeFromParentNode()
+                playSound(state: .whacked)
             }
         }
         
+    }
+    
+    func playSound(state: MoleStatus) {
+        
+        let resource: String
+        
+        switch state {
+        case .spawn:
+            resource = "twang"
+        case .whacked:
+            resource = "squelch"
+        }
+        
+        let url = Bundle.main.url(forResource: resource, withExtension: "mp3")!
+        
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            //guard let player = player else { return }
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
     
 }
@@ -185,4 +244,9 @@ extension MoleGameViewController : SCNSceneRendererDelegate {
         }
      
     }
+}
+
+enum MoleStatus{
+    case spawn
+    case whacked
 }
