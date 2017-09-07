@@ -15,7 +15,7 @@ class MoleGameViewController: UIViewController {
     let maxMeerkats = 3
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
-    var spawnTime:TimeInterval = 0
+    var spawnTime: TimeInterval = 0
     
     private var planes: [UUID: FloorPlaneNode] = [:]
     private var meerkats: [SCNNode] = []
@@ -37,7 +37,7 @@ class MoleGameViewController: UIViewController {
         sceneView.delegate = self
         sceneView.isPlaying = true
         
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped:))
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped))
         sceneView.addGestureRecognizer(tapGesture)
     }
     
@@ -107,8 +107,9 @@ class MoleGameViewController: UIViewController {
         
         print("molePositionOnFloor = \(molePositionOnFloor.y), molePositionInWorld=\(molePositionInWorld.y), floorPane.y= \(floorPlane.position.y)")
 
-       // let geometryNode = SCNNode(geometry: geometry)
         meerkat.position = molePositionInWorld
+        meerkat.name = "meerkat"
+
         
         meerkats.append(meerkat)
         self.scene.rootNode.addChildNode(meerkat)
@@ -154,14 +155,16 @@ extension MoleGameViewController: ARSCNViewDelegate {
         
     }
     
-    func screenTapped(recognizer: UIGestureRecognizer) {
+    @objc func screenTapped(recognizer: UIGestureRecognizer) {
         let sceneView = recognizer.view as! SCNView
         let touchLocation = recognizer.location(in: sceneView)
         let hitResults = sceneView.hitTest(touchLocation, options: [:])
         
         if !hitResults.isEmpty{
             let node = hitResults[0].node
-            node.removeFromParentNode()
+            if node.name == "meerkat"{
+                node.removeFromParentNode()
+            }
         }
         
     }
@@ -173,12 +176,12 @@ extension MoleGameViewController : SCNSceneRendererDelegate {
         // 3
         if time > spawnTime {
             spawnMole()
-            if meerkats.count > maxMeerkats {
+            if meerkats.count >= maxMeerkats {
                 let meerkatToRemove = meerkats.remove(at: 0)
                 meerkatToRemove.removeFromParentNode()
             }
             // 2
-            spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1))
+            spawnTime = time + TimeInterval(Float.random(min: 1, max: 2))
         }
      
     }
