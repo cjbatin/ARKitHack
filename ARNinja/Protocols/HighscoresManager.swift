@@ -10,6 +10,8 @@ import Foundation
 
 protocol HighscoresProtocol {
     
+    /* Update Scores */
+    func updateScores(newScore :Int)
     /*Should get the high scores*/
     func getHighScores() -> [Int]
     /* Should add highscore at index, returns a new array of high scores*/
@@ -21,6 +23,17 @@ protocol HighscoresProtocol {
 }
 
 class HighscoresManager : HighscoresProtocol {
+    
+    func updateScores(newScore: Int) {
+        //Get the highscores
+        let highScores = getHighScores()
+        //Find the position
+        let newPosition = highScorePosition(array: highScores, highScore: newScore)
+        //Add to the scores
+        let newHighScores = addHighScore(atIndex: newPosition, array: highScores, withScore: newScore)
+        //Save the new high scores
+        saveArray(highScores: newHighScores)
+    }
     
     func getHighScores() -> [Int] {
         let userDefaults =  UserDefaults.standard
