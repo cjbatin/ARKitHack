@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +56,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.73333333333333328" green="0.0039215686274509803" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="Mpo-7g-di0"/>
@@ -66,7 +67,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="34"/>
                                 <state key="normal" title="High Scores">
-                                    <color key="titleColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="hOT-vA-dBM" kind="show" id="C0G-AA-yUy"/>
@@ -75,6 +76,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="White" translatesAutoresizingMaskIntoConstraints="NO" id="Zia-3j-JiV">
                                 <rect key="frame" x="215" y="32" width="260" height="252"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +116,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-GK-U6H">
                                             <rect key="frame" x="8" y="8" width="651" height="67"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
-                                            <color key="textColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -159,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="33"/>
+            <point key="canvasLocation" x="730" y="33"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="NzS-Jz-NVp">
@@ -169,48 +171,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-IV-Vke">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="aF1-IV-Vke">
                                 <rect key="frame" x="0.0" y="0.0" width="668" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cp-YM-p4M">
-                                <rect key="frame" x="390" y="241" width="171" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emu-FE-Pbf">
+                                <rect key="frame" x="240" y="114.5" width="187.5" height="52"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaj-wV-f4M">
+                                <rect key="frame" x="295" y="175.5" width="78" height="18.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cp-YM-p4M">
+                                <rect key="frame" x="420" y="220" width="141" height="51"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
                                 <state key="normal" title="Play Again">
-                                    <color key="titleColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="presentation" id="QBx-Bu-0cf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaj-wV-f4M">
-                                <rect key="frame" x="174" y="177" width="320" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <color key="textColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emu-FE-Pbf">
-                                <rect key="frame" x="20" y="112" width="627" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
-                                <color key="textColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvh-6q-rHi">
-                                <rect key="frame" x="122" y="241" width="168" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvh-6q-rHi">
+                                <rect key="frame" x="122" y="226" width="145" height="45"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <state key="normal" title="Main Menu">
-                                    <color key="titleColor" red="0.73333333329999995" green="0.0039215686269999999" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UB3-gP-BPm" kind="show" id="JYe-nZ-vOS"/>
+                                    <segue destination="Jxq-lF-nfp" kind="unwind" unwindAction="unwindToHomeScreen:" id="y70-SY-mEv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aF1-IV-Vke" firstAttribute="top" secondItem="qEU-1c-JXG" secondAttribute="top" id="4Pv-uU-zMa"/>
+                            <constraint firstItem="eaj-wV-f4M" firstAttribute="centerX" secondItem="qEU-1c-JXG" secondAttribute="centerX" id="AZe-13-eE4"/>
+                            <constraint firstItem="Emu-FE-Pbf" firstAttribute="centerX" secondItem="qEU-1c-JXG" secondAttribute="centerX" id="BpW-py-rA7"/>
+                            <constraint firstItem="8Cp-YM-p4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cgb-KT-kpj" secondAttribute="leading" constant="20" symbolic="YES" id="DCX-ig-YrO"/>
+                            <constraint firstItem="mvh-6q-rHi" firstAttribute="leading" secondItem="qEU-1c-JXG" secondAttribute="leading" constant="122" id="Eg7-TF-S1h"/>
+                            <constraint firstItem="qEU-1c-JXG" firstAttribute="bottom" secondItem="aF1-IV-Vke" secondAttribute="bottom" id="Ht9-bk-GqH"/>
+                            <constraint firstItem="qEU-1c-JXG" firstAttribute="bottom" secondItem="mvh-6q-rHi" secondAttribute="bottom" constant="104" id="KaJ-wb-cLW"/>
+                            <constraint firstItem="qEU-1c-JXG" firstAttribute="bottom" secondItem="8Cp-YM-p4M" secondAttribute="bottom" constant="104" id="Los-1f-25f"/>
+                            <constraint firstItem="aF1-IV-Vke" firstAttribute="leading" secondItem="qEU-1c-JXG" secondAttribute="leading" id="PUt-eK-w3x"/>
+                            <constraint firstItem="8Cp-YM-p4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mvh-6q-rHi" secondAttribute="trailing" id="SMR-az-Gc0"/>
+                            <constraint firstItem="eaj-wV-f4M" firstAttribute="firstBaseline" secondItem="Emu-FE-Pbf" secondAttribute="baseline" constant="34" id="UVl-y8-fqs"/>
+                            <constraint firstItem="Emu-FE-Pbf" firstAttribute="centerY" secondItem="qEU-1c-JXG" secondAttribute="centerY" constant="-47" id="b0f-Jn-sE8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mvh-6q-rHi" secondAttribute="trailing" constant="20" symbolic="YES" id="gOx-Sg-Gxc"/>
+                            <constraint firstItem="aF1-IV-Vke" firstAttribute="trailing" secondItem="qEU-1c-JXG" secondAttribute="trailing" constant="1" id="lvt-ac-xI1"/>
+                            <constraint firstItem="qEU-1c-JXG" firstAttribute="trailing" secondItem="8Cp-YM-p4M" secondAttribute="trailing" constant="106" id="nOr-YU-QFM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qEU-1c-JXG"/>
                     </view>
                     <connections>
@@ -218,8 +232,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sb-UV-8J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jxq-lF-nfp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="74.212893553223395" y="997.60000000000002"/>
+            <point key="canvasLocation" x="24" y="998"/>
         </scene>
     </scenes>
     <resources>

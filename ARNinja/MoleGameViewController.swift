@@ -14,14 +14,12 @@ class MoleGameViewController: UIViewController {
 
     var gameController: GameController!
 
-    let maxMeerkats = 3
+    let maxMeerkats = 20
     @IBOutlet weak var sceneView: ARSCNView!
     let scene = SCNScene()
 
     var spawnTime: TimeInterval = 0
-    var spriteScene: SKScene!
-    var scoreLabel: SKLabelNode!
-    var timeLabel: SKLabelNode!
+    var overlayScene: MoleGameOverlayScene!
     
     private var planes: [UUID: FloorPlaneNode] = [:]
     private var meerkats: [SCNNode] = []
@@ -41,7 +39,7 @@ class MoleGameViewController: UIViewController {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        sceneView.debugOptions = [/*ARSCNDebugOptions.showWorldOrigin,*/ ARSCNDebugOptions.showFeaturePoints]
         // Create a new scene
         
         // Set the scene to the view
@@ -51,14 +49,7 @@ class MoleGameViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(screenTapped))
         sceneView.addGestureRecognizer(tapGesture)
-
-        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.text = "Score: 0"
-        scoreLabel.horizontalAlignmentMode = .left
-
-        timeLabel = SKLabelNode(fontNamed: "Chalkduster")
-        timeLabel.text = "Time: 60"
-        timeLabel.horizontalAlignmentMode = .right
+        
 
         updateSprites()
     }
@@ -68,19 +59,9 @@ class MoleGameViewController: UIViewController {
     }
 
     func updateSprites(size: CGSize? = nil) {
-        sceneView.overlaySKScene = nil
 
-        spriteScene = SKScene(size: size ?? self.view.bounds.size)
-
-        scoreLabel.removeFromParent()
-        scoreLabel.position = CGPoint(x: 400, y: 300)
-        spriteScene.addChild(scoreLabel)
-
-        timeLabel.removeFromParent()
-        timeLabel.position = CGPoint(x: 200, y: 300)
-        spriteScene.addChild(timeLabel)
-
-        sceneView.overlaySKScene = spriteScene
+        overlayScene = MoleGameOverlayScene(size: size ?? self.view.bounds.size)
+        sceneView.overlaySKScene = overlayScene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,12 +81,6 @@ class MoleGameViewController: UIViewController {
         // Pause the view's session
         sceneView.session.pause()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-    
 
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -147,7 +122,7 @@ class MoleGameViewController: UIViewController {
         let molePositionOnFloor = SCNVector3(x: x , y: 0, z: z)
         let molePositionInWorld = floorPlane.convertPosition(molePositionOnFloor, to: nil)
         
-        print("molePositionOnFloor = \(molePositionOnFloor.y), molePositionInWorld=\(molePositionInWorld.y), floorPane.y= \(floorPlane.position.y)")
+//        print("molePositionOnFloor = \(molePositionOnFloor.y), molePositionInWorld=\(molePositionInWorld.y), floorPane.y= \(floorPlane.position.y)")
 
         meerkat.position = molePositionInWorld
         meerkat.name = "meerkat"
@@ -181,7 +156,7 @@ extension MoleGameViewController: ARSCNViewDelegate {
         
         self.planes[anchor.identifier] = floorPlaneNode
         
-        spawnMole()
+        gameController.start()
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -202,15 +177,15 @@ extension MoleGameViewController: ARSCNViewDelegate {
         let sceneView = recognizer.view as! SCNView
         let touchLocation = recognizer.location(in: sceneView)
         let hitResults = sceneView.hitTest(touchLocation, options: [:])
-        
+
         if !hitResults.isEmpty{
             let node = hitResults[0].node
-            if node.name == "meerkat"{
+            if node.name == "meerkat" {
                 node.removeFromParentNode()
                 gameController.tapped()
                 playSound(state: .whacked)            }
         }
-        
+
     }
     
     func playSound(state: MoleStatus) {
@@ -246,6 +221,7 @@ extension MoleGameViewController : SCNSceneRendererDelegate {
         if meerkats.count >= maxMeerkats {
             let meerkatToRemove = meerkats.remove(at: 0)
             meerkatToRemove.removeFromParentNode()
+            gameController.missed()
         }
      
     }
@@ -266,8 +242,12 @@ extension MoleGameViewController: GameControllerDelegate {
         self.performSegue(withIdentifier: "toGameOver", sender: self)
     }
 
-    func timeRemainingUpdated(to:TimeInterval) {}
-    func scoreUpdated(to:Int) {}
+    func timeRemainingUpdated(to:TimeInterval) {
+        overlayScene.timeLabel.text = String(format:"Time: %.2f", to)
+    }
+    func scoreUpdated(to:Int) {
+        overlayScene.scoreLabel.text = "Score: \(to)"
+    }
 }
 
 enum MoleStatus{

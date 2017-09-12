@@ -9,9 +9,9 @@
 import Foundation
 
 struct GameDefaults {
-    let timeIncrease: TimeInterval = 5
-    let timeDecrease: TimeInterval = 5
-    let startingRemainingTime: TimeInterval = 60
+    let timeIncrease: TimeInterval = 0.5
+    let timeDecrease: TimeInterval = 1
+    let startingRemainingTime: TimeInterval = 15
     let mininmumSpawnOdds:UInt32 = 2
     let maxTimeBetweenSpawns: TimeInterval = 5
     let minTimeBetweenSpawns: TimeInterval = 1

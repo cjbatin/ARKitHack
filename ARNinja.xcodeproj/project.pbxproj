@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B184BD1F68341B00AC78FB /* MoleGameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B184BC1F68341B00AC78FB /* MoleGameOverlayScene.swift */; };
 		326600B21F61AB1200F86C5B /* MoleGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B11F61AB1200F86C5B /* MoleGameViewController.swift */; };
 		326600B41F61AE5600F86C5B /* FloorPlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */; };
-		3294F0C31F61EC8700B48F67 /* squelch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F61F61E9FE00433A95 /* squelch.mp3 */; };
-		3294F0C41F61EC8900B48F67 /* twang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 431B46F71F61E9FE00433A95 /* twang.mp3 */; };
 		4A08B6671F61C17F00DB85ED /* Title.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A08B6661F61C17F00DB85ED /* Title.scn */; };
 		4A22CED21F61DFE5000A2855 /* Hammer.scn in Resources */ = {isa = PBXBuildFile; fileRef = 4A22CED11F61DFE5000A2855 /* Hammer.scn */; };
 		4A437F511F61AF8F009F3199 /* reactor.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 4A437F4F1F61AF8F009F3199 /* reactor.scnp */; };
@@ -71,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B184BC1F68341B00AC78FB /* MoleGameOverlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleGameOverlayScene.swift; sourceTree = "<group>"; };
 		326600B11F61AB1200F86C5B /* MoleGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleGameViewController.swift; sourceTree = "<group>"; };
 		326600B31F61AE5600F86C5B /* FloorPlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlaneNode.swift; sourceTree = "<group>"; };
 		431B46F61F61E9FE00433A95 /* squelch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squelch.mp3; sourceTree = "<group>"; };
@@ -246,6 +246,7 @@
 				51E95EC91F6187850027FB20 /* GameUtils */,
 				51E95E8F1F6178EE0027FB20 /* AppDelegate.swift */,
 				326600B11F61AB1200F86C5B /* MoleGameViewController.swift */,
+				01B184BC1F68341B00AC78FB /* MoleGameOverlayScene.swift */,
 				51E95EBF1F617E890027FB20 /* ShapeType.swift */,
 				4AA13CB31F619F4D00A153C2 /* GeometryFactory.swift */,
 				4AA13CB11F619ED600A153C2 /* EffectsManager.swift */,
@@ -456,6 +457,7 @@
 				8C3E13091F61E854002D6DF7 /* GameController.swift in Sources */,
 				51E95ED21F61878D0027FB20 /* Float+Extensions.swift in Sources */,
 				4AA13CB41F619F4D00A153C2 /* GeometryFactory.swift in Sources */,
+				01B184BD1F68341B00AC78FB /* MoleGameOverlayScene.swift in Sources */,
 				51E95ED71F6187990027FB20 /* UIColor+Extensions.swift in Sources */,
 				51DD53991F61BECF00097700 /* HighscoresManager.swift in Sources */,
 				51DD53931F61B05F00097700 /* HighScoresTableViewController.swift in Sources */,
@@ -643,10 +645,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8832U97EJ9;
+				DEVELOPMENT_TEAM = 6GUM5FTPT5;
 				INFOPLIST_FILE = ARNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja;
+				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,11 +660,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8832U97EJ9;
-
+				DEVELOPMENT_TEAM = 6GUM5FTPT5;
 				INFOPLIST_FILE = ARNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja;
+				PRODUCT_BUNDLE_IDENTIFIER = me.batin.ARNinja2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

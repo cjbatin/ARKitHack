@@ -45,24 +45,43 @@ class GameController {
     }
 
     func tapped() {
+        game.remainingTime += game.defaults.timeIncrease
+        delegate?.timeRemainingUpdated(to: game.remainingTime)
+        
         game.score += 1
         delegate?.scoreUpdated(to: game.score)
+    }
+    
+    func missed() {
+        game.remainingTime -= game.defaults.timeDecrease
+        delegate?.timeRemainingUpdated(to: game.remainingTime)
     }
 
     func update() {
 
-        // make sure we've started
-        guard let startTime = game.startTime else { return }
+        // make sure we've started but not finished
+        guard let startTime = game.startTime,
+            game.remainingTime > 0 else
+        { return }
+        
+//        print("Remaining Time: \(game.remainingTime); Score: \(game.score)");
 
-        let time = Date().timeIntervalSince1970
+        let now = Date().timeIntervalSince1970
 
-        // grab and update the last update time
-        let lastUpdateTime: TimeInterval = self.lastUpdateTime ?? 0
-        self.lastUpdateTime = time
+        defer {
+            self.lastUpdateTime = now
+        }
+        
 
         // update the remaining time
-        let timeElapsedSinceLastUpdate = time - lastUpdateTime
-        game.remainingTime = startTime - timeElapsedSinceLastUpdate
+        let timeElapsedSinceLastUpdate:TimeInterval
+        if let lastUpdateTime = self.lastUpdateTime {
+            timeElapsedSinceLastUpdate = now - lastUpdateTime
+        } else {
+            timeElapsedSinceLastUpdate = 0
+        }
+     
+        game.remainingTime -= timeElapsedSinceLastUpdate
 
         // make sure they have time left in the game
         guard game.remainingTime > 0 else {
@@ -70,17 +89,17 @@ class GameController {
             return
         }
 
-        let totalElapsedTime = time - startTime
+        let totalElapsedTime = now - startTime
 
         let lastSpawnedAt = game.lastSpawnedAt ?? startTime
         let shouldSpawn = calculator.shouldSpawn(
-            at: time,
+            at: now,
             whenLastSpawnedAt: lastSpawnedAt,
             afterTotalElaspedTime: totalElapsedTime
         )
 
         if shouldSpawn {
-            game.lastSpawnedAt = time
+            game.lastSpawnedAt = now
             let target = Target(
                 uiStyle: .meercat,
                 onTap: {
@@ -91,5 +110,6 @@ class GameController {
             delegate?.spawn(target: target)
         }
 
+        delegate?.timeRemainingUpdated(to: game.remainingTime)
     }
 }
